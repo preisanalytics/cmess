@@ -145,12 +145,7 @@ class CMess::GuessEncoding::Automatic
   end
 
   def initialize(input, chunk_size = nil)
-    @input = case input
-      when IO     then input
-      when String then StringIO.new(input)
-      else raise ArgumentError,
-        "don't know how to handle input of type #{input.class}"
-    end
+    @input = input
 
     @chunk_size = chunk_size
   end
