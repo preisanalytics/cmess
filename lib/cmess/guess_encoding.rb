@@ -54,6 +54,10 @@ module CMess::GuessEncoding
       Automatic.guess(*args)
     end
 
+    def guess_by_bom(*args)
+      Automatic.bom(*args)
+    end
+
     alias_method :guess, :automatic
 
   end

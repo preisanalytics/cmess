@@ -116,6 +116,10 @@ class CMess::GuessEncoding::Automatic
       new(input, chunk_size).guess(ignore_bom)
     end
 
+    def guess_by_bom(input, chunk_size = nil)
+      new(input, chunk_size).bom
+    end
+
     private
 
     def encoding(*encodings, &block)
