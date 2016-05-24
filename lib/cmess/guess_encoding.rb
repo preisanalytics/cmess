@@ -44,12 +44,6 @@ module CMess::GuessEncoding
 
   class << self
 
-    def manual(*args)
-      Manual.display(*args)
-    end
-
-    alias_method :display, :manual
-
     def automatic(*args)
       Automatic.guess(*args)
     end
@@ -65,5 +59,4 @@ module CMess::GuessEncoding
 end
 
 require_relative 'guess_encoding/encoding'
-require_relative 'guess_encoding/manual'
 require_relative 'guess_encoding/automatic'

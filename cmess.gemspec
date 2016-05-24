@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.email = "jens.wille@gmail.com"
   s.executables = ["bconv", "cinderella", "decode_entities", "guess_encoding"]
   s.extra_rdoc_files = ["README", "COPYING", "ChangeLog"]
-  s.files = ["COPYING", "ChangeLog", "README", "Rakefile", "bin/bconv", "bin/cinderella", "bin/decode_entities", "bin/guess_encoding", "data/chartab.yaml", "data/csets/iso_8859-1.yaml", "data/csets/iso_8859-15.yaml", "data/csets/latin1.yaml", "data/csets/unicode/basic_latin.yaml", "data/csets/unicode/cyrillic-supplement.yaml", "data/csets/unicode/cyrillic.yaml", "data/csets/unicode/greek.yaml", "data/csets/unicode/ipa_extensions.yaml", "data/csets/unicode/latin-extended-c.yaml", "data/csets/unicode/latin-extended-d.yaml", "data/csets/unicode/latin_1_supplement.yaml", "data/csets/unicode/latin_extended_a.yaml", "data/csets/unicode/latin_extended_additional.yaml", "data/csets/unicode/latin_extended_b.yaml", "data/csets/unicode/letterlike_symbols.yaml", "data/csets/unicode/spacing_modifier_letters.yaml", "data/csets/utf-8.yaml", "data/csets/utf8.yaml", "data/test_chars.yaml", "example/cinderella/crop", "example/cinderella/crop_repaired", "example/cinderella/empty6-slash.txt", "example/cinderella/empty6-slash_repaired.txt", "example/cinderella/pot", "example/guess_encoding/check_results", "example/guess_encoding/de.utf-8.txt", "example/guess_encoding/en.utf-8.txt", "example/guess_encoding/fr.utf-8.txt", "example/guess_encoding/it.utf-8.txt", "lib/cmess.rb", "lib/cmess/bconv.rb", "lib/cmess/cinderella.rb", "lib/cmess/cli.rb", "lib/cmess/decode_entities.rb", "lib/cmess/guess_encoding.rb", "lib/cmess/guess_encoding/automatic.rb", "lib/cmess/guess_encoding/encoding.rb", "lib/cmess/guess_encoding/manual.rb", "lib/cmess/version.rb"]
+  s.files = ["COPYING", "ChangeLog", "README", "Rakefile", "bin/bconv", "bin/decode_entities", "bin/guess_encoding", "data/chartab.yaml", "data/csets/iso_8859-1.yaml", "data/csets/iso_8859-15.yaml", "data/csets/latin1.yaml", "data/csets/unicode/basic_latin.yaml", "data/csets/unicode/cyrillic-supplement.yaml", "data/csets/unicode/cyrillic.yaml", "data/csets/unicode/greek.yaml", "data/csets/unicode/ipa_extensions.yaml", "data/csets/unicode/latin-extended-c.yaml", "data/csets/unicode/latin-extended-d.yaml", "data/csets/unicode/latin_1_supplement.yaml", "data/csets/unicode/latin_extended_a.yaml", "data/csets/unicode/latin_extended_additional.yaml", "data/csets/unicode/latin_extended_b.yaml", "data/csets/unicode/letterlike_symbols.yaml", "data/csets/unicode/spacing_modifier_letters.yaml", "data/csets/utf-8.yaml", "data/csets/utf8.yaml", "data/test_chars.yaml", "example/cinderella/crop", "example/cinderella/crop_repaired", "example/cinderella/empty6-slash.txt", "example/cinderella/empty6-slash_repaired.txt", "example/cinderella/pot", "example/guess_encoding/check_results", "example/guess_encoding/de.utf-8.txt", "example/guess_encoding/en.utf-8.txt", "example/guess_encoding/fr.utf-8.txt", "example/guess_encoding/it.utf-8.txt", "lib/cmess.rb", "lib/cmess/bconv.rb", "lib/cmess/cinderella.rb", "lib/cmess/decode_entities.rb", "lib/cmess/guess_encoding.rb", "lib/cmess/guess_encoding/automatic.rb", "lib/cmess/guess_encoding/encoding.rb", "lib/cmess/version.rb"]
   s.homepage = "http://github.com/blackwinter/cmess"
   s.licenses = ["AGPL-3.0"]
   s.post_install_message = "\ncmess-0.5.0 [2014-10-07]:\n\n* Dropped +autoload+; require modules explicitly.\n* Ruby 2.2 compatibility.\n\n"
@@ -27,20 +27,17 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<htmlentities>, ["~> 4.3"])
-      s.add_runtime_dependency(%q<nuggets>, ["~> 1.0"])
       s.add_runtime_dependency(%q<safe_yaml>, ["~> 1.0"])
       s.add_development_dependency(%q<hen>, [">= 0"])
       s.add_development_dependency(%q<rake>, [">= 0"])
     else
       s.add_dependency(%q<htmlentities>, ["~> 4.3"])
-      s.add_dependency(%q<nuggets>, ["~> 1.0"])
       s.add_dependency(%q<safe_yaml>, ["~> 1.0"])
       s.add_dependency(%q<hen>, [">= 0"])
       s.add_dependency(%q<rake>, [">= 0"])
     end
   else
     s.add_dependency(%q<htmlentities>, ["~> 4.3"])
-    s.add_dependency(%q<nuggets>, ["~> 1.0"])
     s.add_dependency(%q<safe_yaml>, ["~> 1.0"])
     s.add_dependency(%q<hen>, [">= 0"])
     s.add_dependency(%q<rake>, [">= 0"])
